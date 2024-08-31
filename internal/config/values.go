@@ -91,7 +91,7 @@ func GetValues() *Values {
 	// Default variables
 	viper.SetDefault("aiops_bundler_port", 4337)
 	viper.SetDefault("aiops_bundler_data_directory", "/tmp/aiops_bundler")
-	viper.SetDefault("aiops_bundler_supported_ai_middleware", "0x") //TODO: add aiMiddleware Contract address
+	viper.SetDefault("aiops_bundler_supported_ai_middleware", "0xB05F71ca5E12e14eC73eCdeB98f335843cb47b2f")
 	viper.SetDefault("aiops_bundler_max_verification_gas", 6000000)
 	viper.SetDefault("aiops_bundler_max_batch_gas_limit", 18000000)
 	viper.SetDefault("aiops_bundler_max_op_ttl_seconds", 180)
