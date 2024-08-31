@@ -1,0 +1,48 @@
+stages:
+  - build
+  - deploy
+
+build-dev-job:
+  stage: build
+  tags: ['build.lab.qw']
+  only:
+    - dev
+  script:
+    - ./build.sh $CI_COMMIT_BRANCH $CI_PIPELINE_IID
+
+build-prod-job:
+  stage: build
+  tags: ['soika.prod.qw']
+  only:
+    - main
+  script:
+    - ./build.sh $CI_COMMIT_BRANCH $CI_PIPELINE_IID
+
+deploy-dev-job:
+  stage: deploy
+  tags: ['build.lab.qw']
+  only:
+    - dev
+  script:
+    - |
+      ssh graphql.stage.qw << EOF
+         cd /opt/qw/aiops-bundler
+         docker compose down
+         docker compose pull
+         docker compose up -d
+      EOF
+
+#deploy-prod-job:
+#  stage: deploy
+#  tags: ['soika.prod.qw']
+#  when: manual
+#  only:
+#    - stable
+#  script:
+#    - |
+#      ssh graphql-app01.prod.qw << EOF
+#         cd /opt/qw/aiops-bundler
+#         docker compose down
+#         docker compose pull
+#         docker compose up -d
+#      EOF
