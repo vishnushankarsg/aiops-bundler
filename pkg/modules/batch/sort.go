@@ -3,7 +3,7 @@ package batch
 import (
 	"sort"
 
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/modules"
 )
 
 // SortByNonce returns a BatchHandlerFunc that ensures ops with same sender is ordered by ascending nonce

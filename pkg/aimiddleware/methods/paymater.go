@@ -4,9 +4,9 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 var (

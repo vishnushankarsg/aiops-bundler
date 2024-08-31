@@ -3,8 +3,8 @@ package checks
 import (
 	"fmt"
 
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules/gasprice"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/modules/gasprice"
 )
 
 // ValidateFeePerGas checks the maxFeePerGas is sufficiently high to be included with the current

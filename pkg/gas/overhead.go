@@ -6,9 +6,9 @@ import (
 	"math"
 	"math/big"
 
+	"github.com/AO-Metaplayer/aiops-bundler/internal/utils"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/utils"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 // Overhead provides helper methods for calculating gas limits based on pre-defined parameters.

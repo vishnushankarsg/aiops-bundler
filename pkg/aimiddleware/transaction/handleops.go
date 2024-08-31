@@ -7,15 +7,15 @@ import (
 	"math/big"
 	"time"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware/reverts"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/signer"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/ethclient"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/reverts"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/signer"
 )
 
 // Opts contains all the fields required for submitting a transaction to call HandleOps on the AiMiddleware

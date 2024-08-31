@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"math/big"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/bundler"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/mempool"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/modules/entities"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/signer"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/bundler"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/mempool"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules/entities"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/signer"
 )
 
 // Debug exposes methods used for testing the bundler. These should not be made available in production.

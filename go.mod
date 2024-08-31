@@ -1,4 +1,4 @@
-module gitlab.com/quantum-warriors/aiops-bundler
+module github.com/AO-Metaplayer/aiops-bundler
 
 go 1.20
 

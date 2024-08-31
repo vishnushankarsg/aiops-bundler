@@ -3,11 +3,11 @@ package modules
 import (
 	"math/big"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware/stake"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/mempool"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/stake"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/mempool"
 )
 
 type PendingRemovalItem struct {

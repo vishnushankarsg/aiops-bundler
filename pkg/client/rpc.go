@@ -3,8 +3,8 @@ package client
 import (
 	"errors"
 
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/filter"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/gas"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware/filter"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/gas"
 )
 
 // Named AiOperation type for jsonrpc package.

@@ -3,9 +3,9 @@ package checks
 import (
 	"errors"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 // ValidatePaymasterAndData checks the paymasterAndData is either zero bytes or the first 20 bytes contain an

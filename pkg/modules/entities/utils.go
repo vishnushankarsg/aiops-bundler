@@ -5,9 +5,9 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/AO-Metaplayer/aiops-bundler/internal/dbutils"
 	"github.com/dgraph-io/badger/v3"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/dbutils"
 )
 
 type addressCounter map[common.Address]int

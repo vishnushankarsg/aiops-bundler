@@ -3,9 +3,9 @@
 package mempool
 
 import (
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
 	badger "github.com/dgraph-io/badger/v3"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 // Mempool provides read and write access to a pool of pending AiOperations which have passed all Client

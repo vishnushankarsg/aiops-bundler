@@ -9,13 +9,13 @@ import (
 	"math/big"
 	"time"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware/transaction"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/modules"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/signer"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/metachris/flashbotsrpc"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/transaction"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/signer"
 )
 
 // BuilderClient provides a connection to a block builder API to enable AiOperations to be sent through the

@@ -1,9 +1,9 @@
 package stake
 
 import (
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware"
 )
 
 // GetStakeFunc provides a general interface for retrieving the AiMiddleware stake for a given address.

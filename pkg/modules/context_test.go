@@ -4,12 +4,12 @@ import (
 	"math/big"
 	"testing"
 
+	"github.com/AO-Metaplayer/aiops-bundler/internal/testutils"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware/stake"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/mempool"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/stake"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/mempool"
 )
 
 func TestNoPendingOps(t *testing.T) {

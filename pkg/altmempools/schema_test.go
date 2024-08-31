@@ -3,8 +3,8 @@ package altmempools_test
 import (
 	"testing"
 
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/altmempools"
+	"github.com/AO-Metaplayer/aiops-bundler/internal/testutils"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/altmempools"
 )
 
 func TestValidatesCompliantAltMempool(t *testing.T) {

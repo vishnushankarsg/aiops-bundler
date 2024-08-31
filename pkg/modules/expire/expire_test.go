@@ -4,10 +4,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/AO-Metaplayer/aiops-bundler/internal/testutils"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/modules"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules"
 )
 
 // TestDropExpired calls (*ExpireHandler).DropExpired and verifies that it marks old AiOperations for

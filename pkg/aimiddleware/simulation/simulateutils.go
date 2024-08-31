@@ -1,9 +1,9 @@
 package simulation
 
 import (
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware"
 	mapset "github.com/deckarep/golang-set/v2"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware"
 )
 
 // EntityStakes provides a mapping for encountered entity addresses and their stake info on the AiMiddleware.

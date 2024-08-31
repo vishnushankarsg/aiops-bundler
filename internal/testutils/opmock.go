@@ -3,9 +3,9 @@ package testutils
 import (
 	"math/big"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/google/go-cmp/cmp"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 var (

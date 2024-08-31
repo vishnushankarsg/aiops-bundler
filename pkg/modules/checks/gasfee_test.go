@@ -3,8 +3,8 @@ package checks
 import (
 	"testing"
 
+	"github.com/AO-Metaplayer/aiops-bundler/internal/testutils"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
 )
 
 // TestMFLessThanBF calls checks.ValidateFeePerGas with a MaxFeePerGas < base fee. Expect error.

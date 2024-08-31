@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
 )
 
 var (

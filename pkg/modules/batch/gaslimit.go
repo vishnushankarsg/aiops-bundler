@@ -3,9 +3,9 @@ package batch
 import (
 	"math/big"
 
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/gas"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/gas"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/modules"
 )
 
 // MaintainGasLimit returns a BatchHandlerFunc that ensures the max gas used from the entire batch does not

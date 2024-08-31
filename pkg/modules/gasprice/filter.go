@@ -3,9 +3,9 @@ package gasprice
 import (
 	"math/big"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/modules"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules"
 )
 
 // FilterUnderpriced returns a BatchHandlerFunc that will filter out all the aiOps that are below either the

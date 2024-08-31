@@ -3,8 +3,8 @@ package transaction
 import (
 	"math/big"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 // SuggestMeanGasTipCap suggests a Max Priority Fee for an EIP-1559 transaction to submit a batch of

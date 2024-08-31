@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
+	"github.com/AO-Metaplayer/aiops-bundler/internal/testutils"
 )
 
 // TestAiOperationGetDynamicGasPrice verifies that (*AiOperation).GetDynamicGasPrice returns the correct

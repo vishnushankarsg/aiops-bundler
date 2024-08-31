@@ -9,8 +9,8 @@ import (
 	"reflect"
 	"strings"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/errors"
 	"github.com/gin-gonic/gin"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/errors"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 )

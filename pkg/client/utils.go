@@ -3,14 +3,14 @@ package client
 import (
 	"math/big"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware/filter"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/fees"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/gas"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/state"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/rpc"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/filter"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/fees"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/gas"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/state"
 )
 
 // GetAiOpReceiptFunc is a general interface for fetching a AiOperationReceipt given a aiOpHash,

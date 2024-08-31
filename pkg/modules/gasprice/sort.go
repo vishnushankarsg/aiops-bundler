@@ -3,7 +3,7 @@ package gasprice
 import (
 	"sort"
 
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/modules"
 )
 
 // SortByGasPrice returns a BatchHandlerFunc that will sort the context batch by highest GasPrice first.

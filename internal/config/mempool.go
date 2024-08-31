@@ -1,8 +1,8 @@
 package config
 
 import (
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/modules/entities"
 	"github.com/spf13/viper"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules/entities"
 )
 
 func NewReputationConstantsFromEnv() *entities.ReputationConstants {

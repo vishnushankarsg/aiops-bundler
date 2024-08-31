@@ -3,7 +3,7 @@ package checks
 import (
 	"testing"
 
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
+	"github.com/AO-Metaplayer/aiops-bundler/internal/testutils"
 )
 
 // TestSenderExistAndInitCodeDNE calls checks.ValidateSender where sender contract exist and initCode does

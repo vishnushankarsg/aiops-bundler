@@ -4,9 +4,9 @@ import (
 	"math/big"
 	"testing"
 
+	"github.com/AO-Metaplayer/aiops-bundler/internal/testutils"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aiop"
 	"github.com/ethereum/go-ethereum/common"
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 // TestSuggestMeanGasTipCapForNormalLoad simulates a scenario of normal network load. In this case the average

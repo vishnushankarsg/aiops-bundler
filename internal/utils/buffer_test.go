@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/utils"
+	"github.com/AO-Metaplayer/aiops-bundler/internal/utils"
 )
 
 // TestAddBuffer verifies that AddBuffer returns a new big.Int that is increased by a given percent value.

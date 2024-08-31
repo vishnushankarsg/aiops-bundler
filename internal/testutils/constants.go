@@ -4,11 +4,11 @@ import (
 	"math/big"
 	"time"
 
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/aimiddleware"
+	"github.com/AO-Metaplayer/aiops-bundler/pkg/signer"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware"
-	"gitlab.com/quantum-warriors/aiops-bundler/pkg/signer"
 )
 
 var (

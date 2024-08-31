@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
+	"github.com/AO-Metaplayer/aiops-bundler/internal/config"
 	mapset "github.com/deckarep/golang-set/v2"
-	"gitlab.com/quantum-warriors/aiops-bundler/internal/config"
 )
 
 var (
