@@ -4,10 +4,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/testutils"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/modules"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/modules/gasprice"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules/gasprice"
 )
 
 // TestFilterUnderpricedDynamic verifies that FilterUnderpriced will remove all AiOperations from a batch

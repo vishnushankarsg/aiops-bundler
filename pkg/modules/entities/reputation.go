@@ -6,11 +6,11 @@ import (
 	stdErr "errors"
 	"fmt"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/errors"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/modules"
 	"github.com/dgraph-io/badger/v3"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/errors"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules"
 )
 
 // Reputation provides Client and Bundler modules to track the reputation of every entity seen in a

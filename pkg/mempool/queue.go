@@ -3,9 +3,9 @@ package mempool
 import (
 	"sync"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/wangjia184/sortedset"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 type set struct {

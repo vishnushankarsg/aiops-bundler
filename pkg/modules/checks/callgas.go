@@ -3,8 +3,8 @@ package checks
 import (
 	"fmt"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/gas"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/gas"
 )
 
 // ValidateCallGasLimit checks the callGasLimit is at least the cost of a CALL with non-zero value.

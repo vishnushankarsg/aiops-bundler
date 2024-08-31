@@ -3,8 +3,8 @@ package expire
 import (
 	"time"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/modules"
 	"github.com/ethereum/go-ethereum/common"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules"
 )
 
 type ExpireHandler struct {

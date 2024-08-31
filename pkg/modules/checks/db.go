@@ -3,9 +3,9 @@ package checks
 import (
 	"encoding/json"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/dbutils"
 	"github.com/dgraph-io/badger/v3"
 	"github.com/ethereum/go-ethereum/common"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/dbutils"
 )
 
 var (

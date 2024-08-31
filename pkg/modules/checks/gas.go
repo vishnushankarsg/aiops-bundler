@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/gas"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/gas"
 )
 
 // ValidateGasAvailable checks that the max available gas is less than the batch gas limit.

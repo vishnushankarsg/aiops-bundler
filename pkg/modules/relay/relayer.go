@@ -6,12 +6,12 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aimiddleware/transaction"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/modules"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/signer"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/go-logr/logr"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/transaction"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/signer"
 )
 
 // Relayer provides a module that can relay batches with a regular EOA. Relaying batches to the AiMiddleware

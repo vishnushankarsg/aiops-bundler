@@ -5,13 +5,13 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/altmempools"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/tracer"
 	mapset "github.com/deckarep/golang-set/v2"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/altmempools"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/tracer"
 )
 
 var (

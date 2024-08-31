@@ -1,6 +1,6 @@
 package main
 
-import "github.com/DAO-Metaplayer/aiops-bundler/cmd"
+import "gitlab.com/quantum-warriors/aiops-bundler/cmd"
 
 func main() {
 	cmd.Execute()

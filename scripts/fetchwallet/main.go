@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/signer"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/spf13/viper"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/signer"
 )
 
 func main() {

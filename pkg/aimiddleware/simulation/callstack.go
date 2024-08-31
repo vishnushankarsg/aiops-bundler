@@ -4,9 +4,9 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/utils"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/tracer"
 	"github.com/ethereum/go-ethereum/common"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/utils"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/tracer"
 )
 
 type callEntry struct {

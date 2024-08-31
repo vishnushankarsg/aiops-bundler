@@ -4,10 +4,10 @@ import (
 	"context"
 	"math/big"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aimiddleware"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware"
 )
 
 func filterAiOperationEvent(

@@ -4,8 +4,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/testutils"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/altmempools"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/altmempools"
 )
 
 func TestDirectoryHasSingleInvalidStorageAccessException(t *testing.T) {

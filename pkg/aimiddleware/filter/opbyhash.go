@@ -8,11 +8,11 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aimiddleware/methods"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/ethclient"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/methods"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 type HashLookupResult struct {

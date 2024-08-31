@@ -1,10 +1,10 @@
 package simulation
 
 import (
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aimiddleware/methods"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/tracer"
 	"github.com/ethereum/go-ethereum/common"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/methods"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/tracer"
 )
 
 type knownEntity map[string]struct {

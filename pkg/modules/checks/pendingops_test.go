@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/testutils"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 func TestNoPendingOps(t *testing.T) {

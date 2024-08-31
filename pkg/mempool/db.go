@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"math/big"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/dbutils"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
 	badger "github.com/dgraph-io/badger/v3"
 	"github.com/ethereum/go-ethereum/common"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/dbutils"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 var (

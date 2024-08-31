@@ -4,9 +4,9 @@ import (
 	"errors"
 	"time"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/ginutils"
 	"github.com/gin-gonic/gin"
 	"github.com/go-logr/logr"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/ginutils"
 )
 
 // WithLogr uses a logger with the go-logr/logr interface to log a gin HTTP request.

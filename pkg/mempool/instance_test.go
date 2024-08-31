@@ -4,8 +4,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/testutils"
 	"github.com/ethereum/go-ethereum/common"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
 )
 
 // TestAddOpToMempool verifies that a AiOperation can be added to the mempool and later retrieved without

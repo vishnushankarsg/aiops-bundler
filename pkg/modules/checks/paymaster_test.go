@@ -3,7 +3,7 @@ package checks
 import (
 	"testing"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/testutils"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
 )
 
 // TestNilPaymasterAndData calls checks.ValidatePaymasterAndData with no paymaster set. Expects nil.

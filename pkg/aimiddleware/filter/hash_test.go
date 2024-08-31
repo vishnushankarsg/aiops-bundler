@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/testutils"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
 )
 
 func TestIsValidAiOpHash(t *testing.T) {

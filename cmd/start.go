@@ -3,9 +3,9 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/start"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/start"
 )
 
 var startCmd = &cobra.Command{

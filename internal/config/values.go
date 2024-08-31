@@ -6,11 +6,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/modules/entities"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/signer"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/modules/entities"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/signer"
 )
 
 type Values struct {

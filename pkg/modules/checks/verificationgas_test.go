@@ -4,9 +4,9 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/testutils"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/gas"
 	"github.com/ethereum/go-ethereum/common"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/gas"
 )
 
 // TestOpVGlessThanMaxVG calls checks.ValidateVerificationGas where verificationGas < MAX_VERIFICATION_GAS.

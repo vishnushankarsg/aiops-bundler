@@ -4,8 +4,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/internal/testutils"
 	"github.com/ethereum/go-ethereum/common"
+	"gitlab.com/quantum-warriors/aiops-bundler/internal/testutils"
 )
 
 // TestOpMAGLessThanMax calls checks.ValidateGasAvailable where op.GetMaxAvailableGas < MaxBatchGasLimit.

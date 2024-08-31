@@ -4,12 +4,12 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aimiddleware/execution"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/state"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/rpc"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/execution"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/state"
 )
 
 var (

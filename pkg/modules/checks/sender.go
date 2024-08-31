@@ -3,7 +3,7 @@ package checks
 import (
 	"errors"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 // ValidateSender accepts a aiOp and a generic function that can retrieve the bytecode of the sender.

@@ -6,16 +6,16 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aimiddleware"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aimiddleware/reverts"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aimiddleware/utils"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/errors"
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/state"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/ethereum/go-ethereum/rpc"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/reverts"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aimiddleware/utils"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/errors"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/state"
 )
 
 type SimulateInput struct {

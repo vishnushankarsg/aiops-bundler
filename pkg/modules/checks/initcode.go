@@ -3,8 +3,8 @@ package checks
 import (
 	"errors"
 
-	"github.com/DAO-Metaplayer/aiops-bundler/pkg/aiop"
 	"github.com/ethereum/go-ethereum/common"
+	"gitlab.com/quantum-warriors/aiops-bundler/pkg/aiop"
 )
 
 // ValidateInitCode checks if initCode is not empty and has a valid factory address.
