@@ -26,9 +26,19 @@ var (
 	_ = common.Big1
 	_ = types.BloomLookup
 	_ = event.NewSubscription
+	_ = abi.ConvertType
 )
 
-// AiMiddlewareMemoryAiOp is an auto generated low-level Go binding around an ai-defined struct.
+// AiMiddlewareAiOpInfo is an auto generated low-level Go binding around an user-defined struct.
+type AiMiddlewareAiOpInfo struct {
+	MAiOp         AiMiddlewareMemoryAiOp
+	AiOpHash      [32]byte
+	Prefund       *big.Int
+	ContextOffset *big.Int
+	PreOpGas      *big.Int
+}
+
+// AiMiddlewareMemoryAiOp is an auto generated low-level Go binding around an user-defined struct.
 type AiMiddlewareMemoryAiOp struct {
 	Sender               common.Address
 	Nonce                *big.Int
@@ -40,32 +50,7 @@ type AiMiddlewareMemoryAiOp struct {
 	MaxPriorityFeePerGas *big.Int
 }
 
-// AiMiddlewareAiOpInfo is an auto generated low-level Go binding around an ai-defined struct.
-type AiMiddlewareAiOpInfo struct {
-	MAiOp       AiMiddlewareMemoryAiOp
-	AiOpHash    [32]byte
-	Prefund       *big.Int
-	ContextOffset *big.Int
-	PreOpGas      *big.Int
-}
-
-// IAiMiddlewareAiOpsPerAggregator is an auto generated low-level Go binding around an ai-defined struct.
-type IAiMiddlewareAiOpsPerAggregator struct {
-	AiOps    []AiOperation
-	Aggregator common.Address
-	Signature  []byte
-}
-
-// IDepositManagerDepositInfo is an auto generated low-level Go binding around an ai-defined struct.
-type IDepositManagerDepositInfo struct {
-	Deposit         *big.Int
-	Staked          bool
-	Stake           *big.Int
-	UnstakeDelaySec uint32
-	WithdrawTime    *big.Int
-}
-
-// AiOperation is an auto generated low-level Go binding around an ai-defined struct.
+// AiOperation is an auto generated low-level Go binding around an user-defined struct.
 type AiOperation struct {
 	Sender               common.Address
 	Nonce                *big.Int
@@ -80,9 +65,25 @@ type AiOperation struct {
 	Signature            []byte
 }
 
+// IAiMiddlewareAiOpsPerAggregator is an auto generated low-level Go binding around an user-defined struct.
+type IAiMiddlewareAiOpsPerAggregator struct {
+	AiOps      []AiOperation
+	Aggregator common.Address
+	Signature  []byte
+}
+
+// IDepositManagerDepositInfo is an auto generated low-level Go binding around an user-defined struct.
+type IDepositManagerDepositInfo struct {
+	Deposit         *big.Int
+	Staked          bool
+	Stake           *big.Int
+	UnstakeDelaySec uint32
+	WithdrawTime    *big.Int
+}
+
 // AimiddlewareMetaData contains all meta data concerning the Aimiddleware contract.
 var AimiddlewareMetaData = &bind.MetaData{
-	ABI: "[{\"type\":\"receive\",\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"SIG_VALIDATION_FAILED\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"_validateSenderAndPaymaster\",\"inputs\":[{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"addStake\",\"inputs\":[{\"name\":\"unstakeDelaySec\",\"type\":\"uint32\",\"internalType\":\"uint32\"}],\"outputs\":[],\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"balanceOf\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"depositTo\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"deposits\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"deposit\",\"type\":\"uint112\",\"internalType\":\"uint112\"},{\"name\":\"staked\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"stake\",\"type\":\"uint112\",\"internalType\":\"uint112\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint32\",\"internalType\":\"uint32\"},{\"name\":\"withdrawTime\",\"type\":\"uint48\",\"internalType\":\"uint48\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getAiOpHash\",\"inputs\":[{\"name\":\"aiOp\",\"type\":\"tuple\",\"internalType\":\"struct AiOperation\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]}],\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getDepositInfo\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"info\",\"type\":\"tuple\",\"internalType\":\"struct IDepositManager.DepositInfo\",\"components\":[{\"name\":\"deposit\",\"type\":\"uint112\",\"internalType\":\"uint112\"},{\"name\":\"staked\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"stake\",\"type\":\"uint112\",\"internalType\":\"uint112\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint32\",\"internalType\":\"uint32\"},{\"name\":\"withdrawTime\",\"type\":\"uint48\",\"internalType\":\"uint48\"}]}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getNonce\",\"inputs\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"key\",\"type\":\"uint192\",\"internalType\":\"uint192\"}],\"outputs\":[{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getSenderAddress\",\"inputs\":[{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"handleAggregatedOps\",\"inputs\":[{\"name\":\"opsPerAggregator\",\"type\":\"tuple[]\",\"internalType\":\"struct IAiMiddleware.AiOpsPerAggregator[]\",\"components\":[{\"name\":\"aiOps\",\"type\":\"tuple[]\",\"internalType\":\"struct AiOperation[]\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"aggregator\",\"type\":\"address\",\"internalType\":\"contract IAggregator\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"beneficiary\",\"type\":\"address\",\"internalType\":\"address payable\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"handleOps\",\"inputs\":[{\"name\":\"ops\",\"type\":\"tuple[]\",\"internalType\":\"struct AiOperation[]\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"beneficiary\",\"type\":\"address\",\"internalType\":\"address payable\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"incrementNonce\",\"inputs\":[{\"name\":\"key\",\"type\":\"uint192\",\"internalType\":\"uint192\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"innerHandleOp\",\"inputs\":[{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"opInfo\",\"type\":\"tuple\",\"internalType\":\"struct AiMiddleware.AiOpInfo\",\"components\":[{\"name\":\"mAiOp\",\"type\":\"tuple\",\"internalType\":\"struct AiMiddleware.MemoryAiOp\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymaster\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"aiOpHash\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"},{\"name\":\"prefund\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"contextOffset\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preOpGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"context\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[{\"name\":\"actualGasCost\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"nonceSequenceNumber\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"\",\"type\":\"uint192\",\"internalType\":\"uint192\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"simulateHandleOp\",\"inputs\":[{\"name\":\"op\",\"type\":\"tuple\",\"internalType\":\"struct AiOperation\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"target\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"targetCallData\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"simulateValidation\",\"inputs\":[{\"name\":\"aiOp\",\"type\":\"tuple\",\"internalType\":\"struct AiOperation\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"unlockStake\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"withdrawStake\",\"inputs\":[{\"name\":\"withdrawAddress\",\"type\":\"address\",\"internalType\":\"address payable\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"withdrawTo\",\"inputs\":[{\"name\":\"withdrawAddress\",\"type\":\"address\",\"internalType\":\"address payable\"},{\"name\":\"withdrawAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"event\",\"name\":\"AccountDeployed\",\"inputs\":[{\"name\":\"aiOpHash\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"sender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"factory\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"paymaster\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"AiOperationEvent\",\"inputs\":[{\"name\":\"aiOpHash\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"sender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"paymaster\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"success\",\"type\":\"bool\",\"indexed\":false,\"internalType\":\"bool\"},{\"name\":\"actualGasCost\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"actualGasUsed\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"AiOperationRevertReason\",\"inputs\":[{\"name\":\"aiOpHash\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"sender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"revertReason\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"BeforeAiopsExecution\",\"inputs\":[],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Deposited\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"totalDeposit\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SignatureAggregatorChanged\",\"inputs\":[{\"name\":\"aggregator\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"StakeLocked\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"totalStaked\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"StakeUnlocked\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"withdrawTime\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"StakeWithdrawn\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"withdrawAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Withdrawn\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"withdrawAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"error\",\"name\":\"ExecutionResult\",\"inputs\":[{\"name\":\"preOpGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paid\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"validAfter\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"validUntil\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"targetSuccess\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"targetResult\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"type\":\"error\",\"name\":\"FailedOp\",\"inputs\":[{\"name\":\"opIndex\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"reason\",\"type\":\"string\",\"internalType\":\"string\"}]},{\"type\":\"error\",\"name\":\"ReentrancyGuardReentrantCall\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"SenderAddressResult\",\"inputs\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"SignatureValidationFailed\",\"inputs\":[{\"name\":\"aggregator\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"ValidationResult\",\"inputs\":[{\"name\":\"returnInfo\",\"type\":\"tuple\",\"internalType\":\"struct IAiMiddleware.ReturnInfo\",\"components\":[{\"name\":\"preOpGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"prefund\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"sigFailed\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"validAfter\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"validUntil\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"paymasterContext\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"senderInfo\",\"type\":\"tuple\",\"internalType\":\"struct IDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"factoryInfo\",\"type\":\"tuple\",\"internalType\":\"struct IDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"paymasterInfo\",\"type\":\"tuple\",\"internalType\":\"struct IDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]}]},{\"type\":\"error\",\"name\":\"ValidationResultWithAggregation\",\"inputs\":[{\"name\":\"returnInfo\",\"type\":\"tuple\",\"internalType\":\"struct IAiMiddleware.ReturnInfo\",\"components\":[{\"name\":\"preOpGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"prefund\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"sigFailed\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"validAfter\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"validUntil\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"paymasterContext\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"senderInfo\",\"type\":\"tuple\",\"internalType\":\"struct IDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"factoryInfo\",\"type\":\"tuple\",\"internalType\":\"struct IDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"paymasterInfo\",\"type\":\"tuple\",\"internalType\":\"struct IDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"aggregatorInfo\",\"type\":\"tuple\",\"internalType\":\"struct IAiMiddleware.AggregatorStakeInfo\",\"components\":[{\"name\":\"aggregator\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"stakeInfo\",\"type\":\"tuple\",\"internalType\":\"struct IDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]}]}]}]",
+	ABI: "[{\"type\":\"constructor\",\"inputs\":[{\"name\":\"_validator\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"receive\",\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"SIG_VALIDATION_FAILED\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"_validateSenderAndPaymaster\",\"inputs\":[{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"addStake\",\"inputs\":[{\"name\":\"unstakeDelaySec\",\"type\":\"uint32\",\"internalType\":\"uint32\"}],\"outputs\":[],\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"balanceOf\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"depositTo\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"payable\"},{\"type\":\"function\",\"name\":\"deposits\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"deposit\",\"type\":\"uint112\",\"internalType\":\"uint112\"},{\"name\":\"staked\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"stake\",\"type\":\"uint112\",\"internalType\":\"uint112\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint32\",\"internalType\":\"uint32\"},{\"name\":\"withdrawTime\",\"type\":\"uint48\",\"internalType\":\"uint48\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getAiOpHash\",\"inputs\":[{\"name\":\"aiOp\",\"type\":\"tuple\",\"internalType\":\"structAiOperation\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]}],\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getDepositInfo\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"info\",\"type\":\"tuple\",\"internalType\":\"structIDepositManager.DepositInfo\",\"components\":[{\"name\":\"deposit\",\"type\":\"uint112\",\"internalType\":\"uint112\"},{\"name\":\"staked\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"stake\",\"type\":\"uint112\",\"internalType\":\"uint112\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint32\",\"internalType\":\"uint32\"},{\"name\":\"withdrawTime\",\"type\":\"uint48\",\"internalType\":\"uint48\"}]}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getNonce\",\"inputs\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"key\",\"type\":\"uint192\",\"internalType\":\"uint192\"}],\"outputs\":[{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getSenderAddress\",\"inputs\":[{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"getValidator\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"handleAggregatedOps\",\"inputs\":[{\"name\":\"opsPerAggregator\",\"type\":\"tuple[]\",\"internalType\":\"structIAiMiddleware.AiOpsPerAggregator[]\",\"components\":[{\"name\":\"aiOps\",\"type\":\"tuple[]\",\"internalType\":\"structAiOperation[]\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"aggregator\",\"type\":\"address\",\"internalType\":\"contractIAggregator\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"beneficiary\",\"type\":\"address\",\"internalType\":\"addresspayable\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"handleOps\",\"inputs\":[{\"name\":\"ops\",\"type\":\"tuple[]\",\"internalType\":\"structAiOperation[]\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"beneficiary\",\"type\":\"address\",\"internalType\":\"addresspayable\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"incrementNonce\",\"inputs\":[{\"name\":\"key\",\"type\":\"uint192\",\"internalType\":\"uint192\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"innerHandleOp\",\"inputs\":[{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"opInfo\",\"type\":\"tuple\",\"internalType\":\"structAiMiddleware.AiOpInfo\",\"components\":[{\"name\":\"mAiOp\",\"type\":\"tuple\",\"internalType\":\"structAiMiddleware.MemoryAiOp\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymaster\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"aiOpHash\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"},{\"name\":\"prefund\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"contextOffset\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preOpGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"context\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[{\"name\":\"actualGasCost\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"modifyValidator\",\"inputs\":[{\"name\":\"_validator\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"nonceSequenceNumber\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"\",\"type\":\"uint192\",\"internalType\":\"uint192\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"simulateHandleOp\",\"inputs\":[{\"name\":\"op\",\"type\":\"tuple\",\"internalType\":\"structAiOperation\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"target\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"targetCallData\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"simulateValidation\",\"inputs\":[{\"name\":\"aiOp\",\"type\":\"tuple\",\"internalType\":\"structAiOperation\",\"components\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"initCode\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"callGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"verificationGasLimit\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"preVerificationGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"maxPriorityFeePerGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paymasterAndData\",\"type\":\"bytes\",\"internalType\":\"bytes\"},{\"name\":\"signature\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"transferOwnership\",\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"unlockStake\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"withdrawStake\",\"inputs\":[{\"name\":\"withdrawAddress\",\"type\":\"address\",\"internalType\":\"addresspayable\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"withdrawTo\",\"inputs\":[{\"name\":\"withdrawAddress\",\"type\":\"address\",\"internalType\":\"addresspayable\"},{\"name\":\"withdrawAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"event\",\"name\":\"AccountDeployed\",\"inputs\":[{\"name\":\"aiOpHash\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"sender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"factory\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"paymaster\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"AiOperationEvent\",\"inputs\":[{\"name\":\"aiOpHash\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"sender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"paymaster\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"success\",\"type\":\"bool\",\"indexed\":false,\"internalType\":\"bool\"},{\"name\":\"actualGasCost\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"actualGasUsed\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"AiOperationRevertReason\",\"inputs\":[{\"name\":\"aiOpHash\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"sender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"nonce\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"revertReason\",\"type\":\"bytes\",\"indexed\":false,\"internalType\":\"bytes\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"BeforeAiopsExecution\",\"inputs\":[],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Deposited\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"totalDeposit\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"SignatureAggregatorChanged\",\"inputs\":[{\"name\":\"aggregator\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"StakeLocked\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"totalStaked\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"StakeUnlocked\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"withdrawTime\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"StakeWithdrawn\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"withdrawAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Withdrawn\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"withdrawAddress\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"error\",\"name\":\"ExecutionResult\",\"inputs\":[{\"name\":\"preOpGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"paid\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"validAfter\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"validUntil\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"targetSuccess\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"targetResult\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"type\":\"error\",\"name\":\"FailedOp\",\"inputs\":[{\"name\":\"opIndex\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"reason\",\"type\":\"string\",\"internalType\":\"string\"}]},{\"type\":\"error\",\"name\":\"ReentrancyGuardReentrantCall\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"SenderAddressResult\",\"inputs\":[{\"name\":\"sender\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"SignatureValidationFailed\",\"inputs\":[{\"name\":\"aggregator\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"ValidationResult\",\"inputs\":[{\"name\":\"returnInfo\",\"type\":\"tuple\",\"internalType\":\"structIAiMiddleware.ReturnInfo\",\"components\":[{\"name\":\"preOpGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"prefund\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"sigFailed\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"validAfter\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"validUntil\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"paymasterContext\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"senderInfo\",\"type\":\"tuple\",\"internalType\":\"structIDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"factoryInfo\",\"type\":\"tuple\",\"internalType\":\"structIDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"paymasterInfo\",\"type\":\"tuple\",\"internalType\":\"structIDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]}]},{\"type\":\"error\",\"name\":\"ValidationResultWithAggregation\",\"inputs\":[{\"name\":\"returnInfo\",\"type\":\"tuple\",\"internalType\":\"structIAiMiddleware.ReturnInfo\",\"components\":[{\"name\":\"preOpGas\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"prefund\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"sigFailed\",\"type\":\"bool\",\"internalType\":\"bool\"},{\"name\":\"validAfter\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"validUntil\",\"type\":\"uint48\",\"internalType\":\"uint48\"},{\"name\":\"paymasterContext\",\"type\":\"bytes\",\"internalType\":\"bytes\"}]},{\"name\":\"senderInfo\",\"type\":\"tuple\",\"internalType\":\"structIDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"factoryInfo\",\"type\":\"tuple\",\"internalType\":\"structIDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"paymasterInfo\",\"type\":\"tuple\",\"internalType\":\"structIDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]},{\"name\":\"aggregatorInfo\",\"type\":\"tuple\",\"internalType\":\"structIAiMiddleware.AggregatorStakeInfo\",\"components\":[{\"name\":\"aggregator\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"stakeInfo\",\"type\":\"tuple\",\"internalType\":\"structIDepositManager.StakeInfo\",\"components\":[{\"name\":\"stake\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"unstakeDelaySec\",\"type\":\"uint256\",\"internalType\":\"uint256\"}]}]}]}]",
 }
 
 // AimiddlewareABI is the input ABI used to generate the binding from.
@@ -114,7 +115,7 @@ type AimiddlewareFilterer struct {
 // AimiddlewareSession is an auto generated Go binding around an Ethereum contract,
 // with pre-set call and transact options.
 type AimiddlewareSession struct {
-	Contract     *Aimiddleware       // Generic contract binding to set the session for
+	Contract     *Aimiddleware     // Generic contract binding to set the session for
 	CallOpts     bind.CallOpts     // Call options to use throughout this session
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
@@ -123,14 +124,14 @@ type AimiddlewareSession struct {
 // with pre-set call options.
 type AimiddlewareCallerSession struct {
 	Contract *AimiddlewareCaller // Generic contract caller binding to set the session for
-	CallOpts bind.CallOpts     // Call options to use throughout this session
+	CallOpts bind.CallOpts       // Call options to use throughout this session
 }
 
 // AimiddlewareTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 // with pre-set transact options.
 type AimiddlewareTransactorSession struct {
 	Contract     *AimiddlewareTransactor // Generic contract transactor binding to set the session for
-	TransactOpts bind.TransactOpts     // Transaction auth options to use throughout this session
+	TransactOpts bind.TransactOpts       // Transaction auth options to use throughout this session
 }
 
 // AimiddlewareRaw is an auto generated low-level Go binding around an Ethereum contract.
@@ -186,11 +187,11 @@ func NewAimiddlewareFilterer(address common.Address, filterer bind.ContractFilte
 
 // bindAimiddleware binds a generic wrapper to an already deployed contract.
 func bindAimiddleware(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := abi.JSON(strings.NewReader(AimiddlewareABI))
+	parsed, err := AimiddlewareMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
-	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
+	return bind.NewBoundContract(address, *parsed, caller, transactor, filterer), nil
 }
 
 // Call invokes the (constant) contract method with params as input values and
@@ -382,6 +383,37 @@ func (_Aimiddleware *AimiddlewareCallerSession) Deposits(arg0 common.Address) (s
 	return _Aimiddleware.Contract.Deposits(&_Aimiddleware.CallOpts, arg0)
 }
 
+// GetAiOpHash is a free data retrieval call binding the contract method 0x6960c859.
+//
+// Solidity: function getAiOpHash((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes) aiOp) view returns(bytes32)
+func (_Aimiddleware *AimiddlewareCaller) GetAiOpHash(opts *bind.CallOpts, aiOp AiOperation) ([32]byte, error) {
+	var out []interface{}
+	err := _Aimiddleware.contract.Call(opts, &out, "getAiOpHash", aiOp)
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
+}
+
+// GetAiOpHash is a free data retrieval call binding the contract method 0x6960c859.
+//
+// Solidity: function getAiOpHash((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes) aiOp) view returns(bytes32)
+func (_Aimiddleware *AimiddlewareSession) GetAiOpHash(aiOp AiOperation) ([32]byte, error) {
+	return _Aimiddleware.Contract.GetAiOpHash(&_Aimiddleware.CallOpts, aiOp)
+}
+
+// GetAiOpHash is a free data retrieval call binding the contract method 0x6960c859.
+//
+// Solidity: function getAiOpHash((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes) aiOp) view returns(bytes32)
+func (_Aimiddleware *AimiddlewareCallerSession) GetAiOpHash(aiOp AiOperation) ([32]byte, error) {
+	return _Aimiddleware.Contract.GetAiOpHash(&_Aimiddleware.CallOpts, aiOp)
+}
+
 // GetDepositInfo is a free data retrieval call binding the contract method 0x5287ce12.
 //
 // Solidity: function getDepositInfo(address account) view returns((uint112,bool,uint112,uint32,uint48) info)
@@ -442,37 +474,6 @@ func (_Aimiddleware *AimiddlewareSession) GetNonce(sender common.Address, key *b
 // Solidity: function getNonce(address sender, uint192 key) view returns(uint256 nonce)
 func (_Aimiddleware *AimiddlewareCallerSession) GetNonce(sender common.Address, key *big.Int) (*big.Int, error) {
 	return _Aimiddleware.Contract.GetNonce(&_Aimiddleware.CallOpts, sender, key)
-}
-
-// GetAiOpHash is a free data retrieval call binding the contract method 0xa6193531.
-//
-// Solidity: function getAiOpHash((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes) aiOp) view returns(bytes32)
-func (_Aimiddleware *AimiddlewareCaller) GetAiOpHash(opts *bind.CallOpts, aiOp AiOperation) ([32]byte, error) {
-	var out []interface{}
-	err := _Aimiddleware.contract.Call(opts, &out, "getAiOpHash", aiOp)
-
-	if err != nil {
-		return *new([32]byte), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
-
-	return out0, err
-
-}
-
-// GetAiOpHash is a free data retrieval call binding the contract method 0xa6193531.
-//
-// Solidity: function getAiOpHash((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes) aiOp) view returns(bytes32)
-func (_Aimiddleware *AimiddlewareSession) GetAiOpHash(aiOp AiOperation) ([32]byte, error) {
-	return _Aimiddleware.Contract.GetAiOpHash(&_Aimiddleware.CallOpts, aiOp)
-}
-
-// GetAiOpHash is a free data retrieval call binding the contract method 0xa6193531.
-//
-// Solidity: function getAiOpHash((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes) aiOp) view returns(bytes32)
-func (_Aimiddleware *AimiddlewareCallerSession) GetAiOpHash(aiOp AiOperation) ([32]byte, error) {
-	return _Aimiddleware.Contract.GetAiOpHash(&_Aimiddleware.CallOpts, aiOp)
 }
 
 // NonceSequenceNumber is a free data retrieval call binding the contract method 0x1b2e01b8.
@@ -569,6 +570,27 @@ func (_Aimiddleware *AimiddlewareTransactorSession) GetSenderAddress(initCode []
 	return _Aimiddleware.Contract.GetSenderAddress(&_Aimiddleware.TransactOpts, initCode)
 }
 
+// GetValidator is a paid mutator transaction binding the contract method 0x1195e07e.
+//
+// Solidity: function getValidator() returns(address)
+func (_Aimiddleware *AimiddlewareTransactor) GetValidator(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Aimiddleware.contract.Transact(opts, "getValidator")
+}
+
+// GetValidator is a paid mutator transaction binding the contract method 0x1195e07e.
+//
+// Solidity: function getValidator() returns(address)
+func (_Aimiddleware *AimiddlewareSession) GetValidator() (*types.Transaction, error) {
+	return _Aimiddleware.Contract.GetValidator(&_Aimiddleware.TransactOpts)
+}
+
+// GetValidator is a paid mutator transaction binding the contract method 0x1195e07e.
+//
+// Solidity: function getValidator() returns(address)
+func (_Aimiddleware *AimiddlewareTransactorSession) GetValidator() (*types.Transaction, error) {
+	return _Aimiddleware.Contract.GetValidator(&_Aimiddleware.TransactOpts)
+}
+
 // HandleAggregatedOps is a paid mutator transaction binding the contract method 0x4b1d7cf5.
 //
 // Solidity: function handleAggregatedOps(((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes)[],address,bytes)[] opsPerAggregator, address beneficiary) returns()
@@ -653,6 +675,27 @@ func (_Aimiddleware *AimiddlewareTransactorSession) InnerHandleOp(callData []byt
 	return _Aimiddleware.Contract.InnerHandleOp(&_Aimiddleware.TransactOpts, callData, opInfo, context)
 }
 
+// ModifyValidator is a paid mutator transaction binding the contract method 0x739429a5.
+//
+// Solidity: function modifyValidator(address _validator) returns()
+func (_Aimiddleware *AimiddlewareTransactor) ModifyValidator(opts *bind.TransactOpts, _validator common.Address) (*types.Transaction, error) {
+	return _Aimiddleware.contract.Transact(opts, "modifyValidator", _validator)
+}
+
+// ModifyValidator is a paid mutator transaction binding the contract method 0x739429a5.
+//
+// Solidity: function modifyValidator(address _validator) returns()
+func (_Aimiddleware *AimiddlewareSession) ModifyValidator(_validator common.Address) (*types.Transaction, error) {
+	return _Aimiddleware.Contract.ModifyValidator(&_Aimiddleware.TransactOpts, _validator)
+}
+
+// ModifyValidator is a paid mutator transaction binding the contract method 0x739429a5.
+//
+// Solidity: function modifyValidator(address _validator) returns()
+func (_Aimiddleware *AimiddlewareTransactorSession) ModifyValidator(_validator common.Address) (*types.Transaction, error) {
+	return _Aimiddleware.Contract.ModifyValidator(&_Aimiddleware.TransactOpts, _validator)
+}
+
 // SimulateHandleOp is a paid mutator transaction binding the contract method 0xd6383f94.
 //
 // Solidity: function simulateHandleOp((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes) op, address target, bytes targetCallData) returns()
@@ -693,6 +736,27 @@ func (_Aimiddleware *AimiddlewareSession) SimulateValidation(aiOp AiOperation) (
 // Solidity: function simulateValidation((address,uint256,bytes,bytes,uint256,uint256,uint256,uint256,uint256,bytes,bytes) aiOp) returns()
 func (_Aimiddleware *AimiddlewareTransactorSession) SimulateValidation(aiOp AiOperation) (*types.Transaction, error) {
 	return _Aimiddleware.Contract.SimulateValidation(&_Aimiddleware.TransactOpts, aiOp)
+}
+
+// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
+//
+// Solidity: function transferOwnership(address _owner) returns()
+func (_Aimiddleware *AimiddlewareTransactor) TransferOwnership(opts *bind.TransactOpts, _owner common.Address) (*types.Transaction, error) {
+	return _Aimiddleware.contract.Transact(opts, "transferOwnership", _owner)
+}
+
+// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
+//
+// Solidity: function transferOwnership(address _owner) returns()
+func (_Aimiddleware *AimiddlewareSession) TransferOwnership(_owner common.Address) (*types.Transaction, error) {
+	return _Aimiddleware.Contract.TransferOwnership(&_Aimiddleware.TransactOpts, _owner)
+}
+
+// TransferOwnership is a paid mutator transaction binding the contract method 0xf2fde38b.
+//
+// Solidity: function transferOwnership(address _owner) returns()
+func (_Aimiddleware *AimiddlewareTransactorSession) TransferOwnership(_owner common.Address) (*types.Transaction, error) {
+	return _Aimiddleware.Contract.TransferOwnership(&_Aimiddleware.TransactOpts, _owner)
 }
 
 // UnlockStake is a paid mutator transaction binding the contract method 0xbb9fe6bf.
@@ -848,11 +912,11 @@ func (it *AimiddlewareAccountDeployedIterator) Close() error {
 
 // AimiddlewareAccountDeployed represents a AccountDeployed event raised by the Aimiddleware contract.
 type AimiddlewareAccountDeployed struct {
-	AiOpHash [32]byte
-	Sender     common.Address
-	Factory    common.Address
-	Paymaster  common.Address
-	Raw        types.Log // Blockchain specific contextual infos
+	AiOpHash  [32]byte
+	Sender    common.Address
+	Factory   common.Address
+	Paymaster common.Address
+	Raw       types.Log // Blockchain specific contextual infos
 }
 
 // FilterAccountDeployed is a free log retrieval operation binding the contract event 0xd51a9c61267aa6196961883ecf5ff2da6619c37dac0fa92122513fb32c032d2d.
@@ -899,7 +963,7 @@ func (_Aimiddleware *AimiddlewareFilterer) WatchAccountDeployed(opts *bind.Watch
 		for {
 			select {
 			case log := <-logs:
-				// New log arrived, parse the event and forward to the ai
+				// New log arrived, parse the event and forward to the user
 				event := new(AimiddlewareAccountDeployed)
 				if err := _Aimiddleware.contract.UnpackLog(event, "AccountDeployed", log); err != nil {
 					return err
@@ -934,9 +998,9 @@ func (_Aimiddleware *AimiddlewareFilterer) ParseAccountDeployed(log types.Log) (
 	return event, nil
 }
 
-// AimiddlewareBeforeExecutionIterator is returned from FilterBeforeExecution and is used to iterate over the raw logs and unpacked data for BeforeExecution events raised by the Aimiddleware contract.
-type AimiddlewareBeforeExecutionIterator struct {
-	Event *AimiddlewareBeforeExecution // Event containing the contract specifics and raw log
+// AimiddlewareAiOperationEventIterator is returned from FilterAiOperationEvent and is used to iterate over the raw logs and unpacked data for AiOperationEvent events raised by the Aimiddleware contract.
+type AimiddlewareAiOperationEventIterator struct {
+	Event *AimiddlewareAiOperationEvent // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -950,7 +1014,7 @@ type AimiddlewareBeforeExecutionIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *AimiddlewareBeforeExecutionIterator) Next() bool {
+func (it *AimiddlewareAiOperationEventIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -959,7 +1023,7 @@ func (it *AimiddlewareBeforeExecutionIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(AimiddlewareBeforeExecution)
+			it.Event = new(AimiddlewareAiOperationEvent)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -974,7 +1038,7 @@ func (it *AimiddlewareBeforeExecutionIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(AimiddlewareBeforeExecution)
+		it.Event = new(AimiddlewareAiOperationEvent)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -990,40 +1054,73 @@ func (it *AimiddlewareBeforeExecutionIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *AimiddlewareBeforeExecutionIterator) Error() error {
+func (it *AimiddlewareAiOperationEventIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *AimiddlewareBeforeExecutionIterator) Close() error {
+func (it *AimiddlewareAiOperationEventIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// AimiddlewareBeforeExecution represents a BeforeExecution event raised by the Aimiddleware contract.
-type AimiddlewareBeforeExecution struct {
-	Raw types.Log // Blockchain specific contextual infos
+// AimiddlewareAiOperationEvent represents a AiOperationEvent event raised by the Aimiddleware contract.
+type AimiddlewareAiOperationEvent struct {
+	AiOpHash      [32]byte
+	Sender        common.Address
+	Paymaster     common.Address
+	Nonce         *big.Int
+	Success       bool
+	ActualGasCost *big.Int
+	ActualGasUsed *big.Int
+	Raw           types.Log // Blockchain specific contextual infos
 }
 
-// FilterBeforeExecution is a free log retrieval operation binding the contract event 0xbb47ee3e183a558b1a2ff0874b079f3fc5478b7454eacf2bfc5af2ff5878f972.
+// FilterAiOperationEvent is a free log retrieval operation binding the contract event 0x7b592a4f684d032578f75dff2ca3d3d2aec981a6d0a782e1d127595a6511a4f1.
 //
-// Solidity: event BeforeExecution()
-func (_Aimiddleware *AimiddlewareFilterer) FilterBeforeExecution(opts *bind.FilterOpts) (*AimiddlewareBeforeExecutionIterator, error) {
+// Solidity: event AiOperationEvent(bytes32 indexed aiOpHash, address indexed sender, address indexed paymaster, uint256 nonce, bool success, uint256 actualGasCost, uint256 actualGasUsed)
+func (_Aimiddleware *AimiddlewareFilterer) FilterAiOperationEvent(opts *bind.FilterOpts, aiOpHash [][32]byte, sender []common.Address, paymaster []common.Address) (*AimiddlewareAiOperationEventIterator, error) {
 
-	logs, sub, err := _Aimiddleware.contract.FilterLogs(opts, "BeforeExecution")
+	var aiOpHashRule []interface{}
+	for _, aiOpHashItem := range aiOpHash {
+		aiOpHashRule = append(aiOpHashRule, aiOpHashItem)
+	}
+	var senderRule []interface{}
+	for _, senderItem := range sender {
+		senderRule = append(senderRule, senderItem)
+	}
+	var paymasterRule []interface{}
+	for _, paymasterItem := range paymaster {
+		paymasterRule = append(paymasterRule, paymasterItem)
+	}
+
+	logs, sub, err := _Aimiddleware.contract.FilterLogs(opts, "AiOperationEvent", aiOpHashRule, senderRule, paymasterRule)
 	if err != nil {
 		return nil, err
 	}
-	return &AimiddlewareBeforeExecutionIterator{contract: _Aimiddleware.contract, event: "BeforeExecution", logs: logs, sub: sub}, nil
+	return &AimiddlewareAiOperationEventIterator{contract: _Aimiddleware.contract, event: "AiOperationEvent", logs: logs, sub: sub}, nil
 }
 
-// WatchBeforeExecution is a free log subscription operation binding the contract event 0xbb47ee3e183a558b1a2ff0874b079f3fc5478b7454eacf2bfc5af2ff5878f972.
+// WatchAiOperationEvent is a free log subscription operation binding the contract event 0x7b592a4f684d032578f75dff2ca3d3d2aec981a6d0a782e1d127595a6511a4f1.
 //
-// Solidity: event BeforeExecution()
-func (_Aimiddleware *AimiddlewareFilterer) WatchBeforeExecution(opts *bind.WatchOpts, sink chan<- *AimiddlewareBeforeExecution) (event.Subscription, error) {
+// Solidity: event AiOperationEvent(bytes32 indexed aiOpHash, address indexed sender, address indexed paymaster, uint256 nonce, bool success, uint256 actualGasCost, uint256 actualGasUsed)
+func (_Aimiddleware *AimiddlewareFilterer) WatchAiOperationEvent(opts *bind.WatchOpts, sink chan<- *AimiddlewareAiOperationEvent, aiOpHash [][32]byte, sender []common.Address, paymaster []common.Address) (event.Subscription, error) {
 
-	logs, sub, err := _Aimiddleware.contract.WatchLogs(opts, "BeforeExecution")
+	var aiOpHashRule []interface{}
+	for _, aiOpHashItem := range aiOpHash {
+		aiOpHashRule = append(aiOpHashRule, aiOpHashItem)
+	}
+	var senderRule []interface{}
+	for _, senderItem := range sender {
+		senderRule = append(senderRule, senderItem)
+	}
+	var paymasterRule []interface{}
+	for _, paymasterItem := range paymaster {
+		paymasterRule = append(paymasterRule, paymasterItem)
+	}
+
+	logs, sub, err := _Aimiddleware.contract.WatchLogs(opts, "AiOperationEvent", aiOpHashRule, senderRule, paymasterRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1032,9 +1129,9 @@ func (_Aimiddleware *AimiddlewareFilterer) WatchBeforeExecution(opts *bind.Watch
 		for {
 			select {
 			case log := <-logs:
-				// New log arrived, parse the event and forward to the ai
-				event := new(AimiddlewareBeforeExecution)
-				if err := _Aimiddleware.contract.UnpackLog(event, "BeforeExecution", log); err != nil {
+				// New log arrived, parse the event and forward to the user
+				event := new(AimiddlewareAiOperationEvent)
+				if err := _Aimiddleware.contract.UnpackLog(event, "AiOperationEvent", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1055,12 +1152,300 @@ func (_Aimiddleware *AimiddlewareFilterer) WatchBeforeExecution(opts *bind.Watch
 	}), nil
 }
 
-// ParseBeforeExecution is a log parse operation binding the contract event 0xbb47ee3e183a558b1a2ff0874b079f3fc5478b7454eacf2bfc5af2ff5878f972.
+// ParseAiOperationEvent is a log parse operation binding the contract event 0x7b592a4f684d032578f75dff2ca3d3d2aec981a6d0a782e1d127595a6511a4f1.
 //
-// Solidity: event BeforeExecution()
-func (_Aimiddleware *AimiddlewareFilterer) ParseBeforeExecution(log types.Log) (*AimiddlewareBeforeExecution, error) {
-	event := new(AimiddlewareBeforeExecution)
-	if err := _Aimiddleware.contract.UnpackLog(event, "BeforeExecution", log); err != nil {
+// Solidity: event AiOperationEvent(bytes32 indexed aiOpHash, address indexed sender, address indexed paymaster, uint256 nonce, bool success, uint256 actualGasCost, uint256 actualGasUsed)
+func (_Aimiddleware *AimiddlewareFilterer) ParseAiOperationEvent(log types.Log) (*AimiddlewareAiOperationEvent, error) {
+	event := new(AimiddlewareAiOperationEvent)
+	if err := _Aimiddleware.contract.UnpackLog(event, "AiOperationEvent", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// AimiddlewareAiOperationRevertReasonIterator is returned from FilterAiOperationRevertReason and is used to iterate over the raw logs and unpacked data for AiOperationRevertReason events raised by the Aimiddleware contract.
+type AimiddlewareAiOperationRevertReasonIterator struct {
+	Event *AimiddlewareAiOperationRevertReason // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *AimiddlewareAiOperationRevertReasonIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(AimiddlewareAiOperationRevertReason)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(AimiddlewareAiOperationRevertReason)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *AimiddlewareAiOperationRevertReasonIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *AimiddlewareAiOperationRevertReasonIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// AimiddlewareAiOperationRevertReason represents a AiOperationRevertReason event raised by the Aimiddleware contract.
+type AimiddlewareAiOperationRevertReason struct {
+	AiOpHash     [32]byte
+	Sender       common.Address
+	Nonce        *big.Int
+	RevertReason []byte
+	Raw          types.Log // Blockchain specific contextual infos
+}
+
+// FilterAiOperationRevertReason is a free log retrieval operation binding the contract event 0xd5425d9883d2972240bba93dc9098c4f8a304a1a73d0c8b5a7276ce2994f9bb2.
+//
+// Solidity: event AiOperationRevertReason(bytes32 indexed aiOpHash, address indexed sender, uint256 nonce, bytes revertReason)
+func (_Aimiddleware *AimiddlewareFilterer) FilterAiOperationRevertReason(opts *bind.FilterOpts, aiOpHash [][32]byte, sender []common.Address) (*AimiddlewareAiOperationRevertReasonIterator, error) {
+
+	var aiOpHashRule []interface{}
+	for _, aiOpHashItem := range aiOpHash {
+		aiOpHashRule = append(aiOpHashRule, aiOpHashItem)
+	}
+	var senderRule []interface{}
+	for _, senderItem := range sender {
+		senderRule = append(senderRule, senderItem)
+	}
+
+	logs, sub, err := _Aimiddleware.contract.FilterLogs(opts, "AiOperationRevertReason", aiOpHashRule, senderRule)
+	if err != nil {
+		return nil, err
+	}
+	return &AimiddlewareAiOperationRevertReasonIterator{contract: _Aimiddleware.contract, event: "AiOperationRevertReason", logs: logs, sub: sub}, nil
+}
+
+// WatchAiOperationRevertReason is a free log subscription operation binding the contract event 0xd5425d9883d2972240bba93dc9098c4f8a304a1a73d0c8b5a7276ce2994f9bb2.
+//
+// Solidity: event AiOperationRevertReason(bytes32 indexed aiOpHash, address indexed sender, uint256 nonce, bytes revertReason)
+func (_Aimiddleware *AimiddlewareFilterer) WatchAiOperationRevertReason(opts *bind.WatchOpts, sink chan<- *AimiddlewareAiOperationRevertReason, aiOpHash [][32]byte, sender []common.Address) (event.Subscription, error) {
+
+	var aiOpHashRule []interface{}
+	for _, aiOpHashItem := range aiOpHash {
+		aiOpHashRule = append(aiOpHashRule, aiOpHashItem)
+	}
+	var senderRule []interface{}
+	for _, senderItem := range sender {
+		senderRule = append(senderRule, senderItem)
+	}
+
+	logs, sub, err := _Aimiddleware.contract.WatchLogs(opts, "AiOperationRevertReason", aiOpHashRule, senderRule)
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(AimiddlewareAiOperationRevertReason)
+				if err := _Aimiddleware.contract.UnpackLog(event, "AiOperationRevertReason", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseAiOperationRevertReason is a log parse operation binding the contract event 0xd5425d9883d2972240bba93dc9098c4f8a304a1a73d0c8b5a7276ce2994f9bb2.
+//
+// Solidity: event AiOperationRevertReason(bytes32 indexed aiOpHash, address indexed sender, uint256 nonce, bytes revertReason)
+func (_Aimiddleware *AimiddlewareFilterer) ParseAiOperationRevertReason(log types.Log) (*AimiddlewareAiOperationRevertReason, error) {
+	event := new(AimiddlewareAiOperationRevertReason)
+	if err := _Aimiddleware.contract.UnpackLog(event, "AiOperationRevertReason", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
+}
+
+// AimiddlewareBeforeAiopsExecutionIterator is returned from FilterBeforeAiopsExecution and is used to iterate over the raw logs and unpacked data for BeforeAiopsExecution events raised by the Aimiddleware contract.
+type AimiddlewareBeforeAiopsExecutionIterator struct {
+	Event *AimiddlewareBeforeAiopsExecution // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *AimiddlewareBeforeAiopsExecutionIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(AimiddlewareBeforeAiopsExecution)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
+
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(AimiddlewareBeforeAiopsExecution)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *AimiddlewareBeforeAiopsExecutionIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *AimiddlewareBeforeAiopsExecutionIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// AimiddlewareBeforeAiopsExecution represents a BeforeAiopsExecution event raised by the Aimiddleware contract.
+type AimiddlewareBeforeAiopsExecution struct {
+	Raw types.Log // Blockchain specific contextual infos
+}
+
+// FilterBeforeAiopsExecution is a free log retrieval operation binding the contract event 0xd22ebd07844ae9e9c8d9945236ef70e6c2f2f0c5bbeef9980c0384600d424243.
+//
+// Solidity: event BeforeAiopsExecution()
+func (_Aimiddleware *AimiddlewareFilterer) FilterBeforeAiopsExecution(opts *bind.FilterOpts) (*AimiddlewareBeforeAiopsExecutionIterator, error) {
+
+	logs, sub, err := _Aimiddleware.contract.FilterLogs(opts, "BeforeAiopsExecution")
+	if err != nil {
+		return nil, err
+	}
+	return &AimiddlewareBeforeAiopsExecutionIterator{contract: _Aimiddleware.contract, event: "BeforeAiopsExecution", logs: logs, sub: sub}, nil
+}
+
+// WatchBeforeAiopsExecution is a free log subscription operation binding the contract event 0xd22ebd07844ae9e9c8d9945236ef70e6c2f2f0c5bbeef9980c0384600d424243.
+//
+// Solidity: event BeforeAiopsExecution()
+func (_Aimiddleware *AimiddlewareFilterer) WatchBeforeAiopsExecution(opts *bind.WatchOpts, sink chan<- *AimiddlewareBeforeAiopsExecution) (event.Subscription, error) {
+
+	logs, sub, err := _Aimiddleware.contract.WatchLogs(opts, "BeforeAiopsExecution")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(AimiddlewareBeforeAiopsExecution)
+				if err := _Aimiddleware.contract.UnpackLog(event, "BeforeAiopsExecution", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
+}
+
+// ParseBeforeAiopsExecution is a log parse operation binding the contract event 0xd22ebd07844ae9e9c8d9945236ef70e6c2f2f0c5bbeef9980c0384600d424243.
+//
+// Solidity: event BeforeAiopsExecution()
+func (_Aimiddleware *AimiddlewareFilterer) ParseBeforeAiopsExecution(log types.Log) (*AimiddlewareBeforeAiopsExecution, error) {
+	event := new(AimiddlewareBeforeAiopsExecution)
+	if err := _Aimiddleware.contract.UnpackLog(event, "BeforeAiopsExecution", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
@@ -1177,7 +1562,7 @@ func (_Aimiddleware *AimiddlewareFilterer) WatchDeposited(opts *bind.WatchOpts, 
 		for {
 			select {
 			case log := <-logs:
-				// New log arrived, parse the event and forward to the ai
+				// New log arrived, parse the event and forward to the user
 				event := new(AimiddlewareDeposited)
 				if err := _Aimiddleware.contract.UnpackLog(event, "Deposited", log); err != nil {
 					return err
@@ -1321,7 +1706,7 @@ func (_Aimiddleware *AimiddlewareFilterer) WatchSignatureAggregatorChanged(opts 
 		for {
 			select {
 			case log := <-logs:
-				// New log arrived, parse the event and forward to the ai
+				// New log arrived, parse the event and forward to the user
 				event := new(AimiddlewareSignatureAggregatorChanged)
 				if err := _Aimiddleware.contract.UnpackLog(event, "SignatureAggregatorChanged", log); err != nil {
 					return err
@@ -1467,7 +1852,7 @@ func (_Aimiddleware *AimiddlewareFilterer) WatchStakeLocked(opts *bind.WatchOpts
 		for {
 			select {
 			case log := <-logs:
-				// New log arrived, parse the event and forward to the ai
+				// New log arrived, parse the event and forward to the user
 				event := new(AimiddlewareStakeLocked)
 				if err := _Aimiddleware.contract.UnpackLog(event, "StakeLocked", log); err != nil {
 					return err
@@ -1612,7 +1997,7 @@ func (_Aimiddleware *AimiddlewareFilterer) WatchStakeUnlocked(opts *bind.WatchOp
 		for {
 			select {
 			case log := <-logs:
-				// New log arrived, parse the event and forward to the ai
+				// New log arrived, parse the event and forward to the user
 				event := new(AimiddlewareStakeUnlocked)
 				if err := _Aimiddleware.contract.UnpackLog(event, "StakeUnlocked", log); err != nil {
 					return err
@@ -1758,7 +2143,7 @@ func (_Aimiddleware *AimiddlewareFilterer) WatchStakeWithdrawn(opts *bind.WatchO
 		for {
 			select {
 			case log := <-logs:
-				// New log arrived, parse the event and forward to the ai
+				// New log arrived, parse the event and forward to the user
 				event := new(AimiddlewareStakeWithdrawn)
 				if err := _Aimiddleware.contract.UnpackLog(event, "StakeWithdrawn", log); err != nil {
 					return err
@@ -1787,327 +2172,6 @@ func (_Aimiddleware *AimiddlewareFilterer) WatchStakeWithdrawn(opts *bind.WatchO
 func (_Aimiddleware *AimiddlewareFilterer) ParseStakeWithdrawn(log types.Log) (*AimiddlewareStakeWithdrawn, error) {
 	event := new(AimiddlewareStakeWithdrawn)
 	if err := _Aimiddleware.contract.UnpackLog(event, "StakeWithdrawn", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// AimiddlewareAiOperationEventIterator is returned from FilterAiOperationEvent and is used to iterate over the raw logs and unpacked data for AiOperationEvent events raised by the Aimiddleware contract.
-type AimiddlewareAiOperationEventIterator struct {
-	Event *AimiddlewareAiOperationEvent // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *AimiddlewareAiOperationEventIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(AimiddlewareAiOperationEvent)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(AimiddlewareAiOperationEvent)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *AimiddlewareAiOperationEventIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *AimiddlewareAiOperationEventIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// AimiddlewareAiOperationEvent represents a AiOperationEvent event raised by the Aimiddleware contract.
-type AimiddlewareAiOperationEvent struct {
-	AiOpHash    [32]byte
-	Sender        common.Address
-	Paymaster     common.Address
-	Nonce         *big.Int
-	Success       bool
-	ActualGasCost *big.Int
-	ActualGasUsed *big.Int
-	Raw           types.Log // Blockchain specific contextual infos
-}
-
-// FilterAiOperationEvent is a free log retrieval operation binding the contract event 0x49628fd1471006c1482da88028e9ce4dbb080b815c9b0344d39e5a8e6ec1419f.
-//
-// Solidity: event AiOperationEvent(bytes32 indexed aiOpHash, address indexed sender, address indexed paymaster, uint256 nonce, bool success, uint256 actualGasCost, uint256 actualGasUsed)
-func (_Aimiddleware *AimiddlewareFilterer) FilterAiOperationEvent(opts *bind.FilterOpts, aiOpHash [][32]byte, sender []common.Address, paymaster []common.Address) (*AimiddlewareAiOperationEventIterator, error) {
-
-	var aiOpHashRule []interface{}
-	for _, aiOpHashItem := range aiOpHash {
-		aiOpHashRule = append(aiOpHashRule, aiOpHashItem)
-	}
-	var senderRule []interface{}
-	for _, senderItem := range sender {
-		senderRule = append(senderRule, senderItem)
-	}
-	var paymasterRule []interface{}
-	for _, paymasterItem := range paymaster {
-		paymasterRule = append(paymasterRule, paymasterItem)
-	}
-
-	logs, sub, err := _Aimiddleware.contract.FilterLogs(opts, "AiOperationEvent", aiOpHashRule, senderRule, paymasterRule)
-	if err != nil {
-		return nil, err
-	}
-	return &AimiddlewareAiOperationEventIterator{contract: _Aimiddleware.contract, event: "AiOperationEvent", logs: logs, sub: sub}, nil
-}
-
-// WatchAiOperationEvent is a free log subscription operation binding the contract event 0x49628fd1471006c1482da88028e9ce4dbb080b815c9b0344d39e5a8e6ec1419f.
-//
-// Solidity: event AiOperationEvent(bytes32 indexed aiOpHash, address indexed sender, address indexed paymaster, uint256 nonce, bool success, uint256 actualGasCost, uint256 actualGasUsed)
-func (_Aimiddleware *AimiddlewareFilterer) WatchAiOperationEvent(opts *bind.WatchOpts, sink chan<- *AimiddlewareAiOperationEvent, aiOpHash [][32]byte, sender []common.Address, paymaster []common.Address) (event.Subscription, error) {
-
-	var aiOpHashRule []interface{}
-	for _, aiOpHashItem := range aiOpHash {
-		aiOpHashRule = append(aiOpHashRule, aiOpHashItem)
-	}
-	var senderRule []interface{}
-	for _, senderItem := range sender {
-		senderRule = append(senderRule, senderItem)
-	}
-	var paymasterRule []interface{}
-	for _, paymasterItem := range paymaster {
-		paymasterRule = append(paymasterRule, paymasterItem)
-	}
-
-	logs, sub, err := _Aimiddleware.contract.WatchLogs(opts, "AiOperationEvent", aiOpHashRule, senderRule, paymasterRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the ai
-				event := new(AimiddlewareAiOperationEvent)
-				if err := _Aimiddleware.contract.UnpackLog(event, "AiOperationEvent", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseAiOperationEvent is a log parse operation binding the contract event 0x49628fd1471006c1482da88028e9ce4dbb080b815c9b0344d39e5a8e6ec1419f.
-//
-// Solidity: event AiOperationEvent(bytes32 indexed aiOpHash, address indexed sender, address indexed paymaster, uint256 nonce, bool success, uint256 actualGasCost, uint256 actualGasUsed)
-func (_Aimiddleware *AimiddlewareFilterer) ParseAiOperationEvent(log types.Log) (*AimiddlewareAiOperationEvent, error) {
-	event := new(AimiddlewareAiOperationEvent)
-	if err := _Aimiddleware.contract.UnpackLog(event, "AiOperationEvent", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// AimiddlewareAiOperationRevertReasonIterator is returned from FilterAiOperationRevertReason and is used to iterate over the raw logs and unpacked data for AiOperationRevertReason events raised by the Aimiddleware contract.
-type AimiddlewareAiOperationRevertReasonIterator struct {
-	Event *AimiddlewareAiOperationRevertReason // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *AimiddlewareAiOperationRevertReasonIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(AimiddlewareAiOperationRevertReason)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(AimiddlewareAiOperationRevertReason)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *AimiddlewareAiOperationRevertReasonIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *AimiddlewareAiOperationRevertReasonIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// AimiddlewareAiOperationRevertReason represents a AiOperationRevertReason event raised by the Aimiddleware contract.
-type AimiddlewareAiOperationRevertReason struct {
-	AiOpHash   [32]byte
-	Sender       common.Address
-	Nonce        *big.Int
-	RevertReason []byte
-	Raw          types.Log // Blockchain specific contextual infos
-}
-
-// FilterAiOperationRevertReason is a free log retrieval operation binding the contract event 0x1c4fada7374c0a9ee8841fc38afe82932dc0f8e69012e927f061a8bae611a201.
-//
-// Solidity: event AiOperationRevertReason(bytes32 indexed aiOpHash, address indexed sender, uint256 nonce, bytes revertReason)
-func (_Aimiddleware *AimiddlewareFilterer) FilterAiOperationRevertReason(opts *bind.FilterOpts, aiOpHash [][32]byte, sender []common.Address) (*AimiddlewareAiOperationRevertReasonIterator, error) {
-
-	var aiOpHashRule []interface{}
-	for _, aiOpHashItem := range aiOpHash {
-		aiOpHashRule = append(aiOpHashRule, aiOpHashItem)
-	}
-	var senderRule []interface{}
-	for _, senderItem := range sender {
-		senderRule = append(senderRule, senderItem)
-	}
-
-	logs, sub, err := _Aimiddleware.contract.FilterLogs(opts, "AiOperationRevertReason", aiOpHashRule, senderRule)
-	if err != nil {
-		return nil, err
-	}
-	return &AimiddlewareAiOperationRevertReasonIterator{contract: _Aimiddleware.contract, event: "AiOperationRevertReason", logs: logs, sub: sub}, nil
-}
-
-// WatchAiOperationRevertReason is a free log subscription operation binding the contract event 0x1c4fada7374c0a9ee8841fc38afe82932dc0f8e69012e927f061a8bae611a201.
-//
-// Solidity: event AiOperationRevertReason(bytes32 indexed aiOpHash, address indexed sender, uint256 nonce, bytes revertReason)
-func (_Aimiddleware *AimiddlewareFilterer) WatchAiOperationRevertReason(opts *bind.WatchOpts, sink chan<- *AimiddlewareAiOperationRevertReason, aiOpHash [][32]byte, sender []common.Address) (event.Subscription, error) {
-
-	var aiOpHashRule []interface{}
-	for _, aiOpHashItem := range aiOpHash {
-		aiOpHashRule = append(aiOpHashRule, aiOpHashItem)
-	}
-	var senderRule []interface{}
-	for _, senderItem := range sender {
-		senderRule = append(senderRule, senderItem)
-	}
-
-	logs, sub, err := _Aimiddleware.contract.WatchLogs(opts, "AiOperationRevertReason", aiOpHashRule, senderRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the ai
-				event := new(AimiddlewareAiOperationRevertReason)
-				if err := _Aimiddleware.contract.UnpackLog(event, "AiOperationRevertReason", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseAiOperationRevertReason is a log parse operation binding the contract event 0x1c4fada7374c0a9ee8841fc38afe82932dc0f8e69012e927f061a8bae611a201.
-//
-// Solidity: event AiOperationRevertReason(bytes32 indexed aiOpHash, address indexed sender, uint256 nonce, bytes revertReason)
-func (_Aimiddleware *AimiddlewareFilterer) ParseAiOperationRevertReason(log types.Log) (*AimiddlewareAiOperationRevertReason, error) {
-	event := new(AimiddlewareAiOperationRevertReason)
-	if err := _Aimiddleware.contract.UnpackLog(event, "AiOperationRevertReason", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
@@ -2225,7 +2289,7 @@ func (_Aimiddleware *AimiddlewareFilterer) WatchWithdrawn(opts *bind.WatchOpts, 
 		for {
 			select {
 			case log := <-logs:
-				// New log arrived, parse the event and forward to the ai
+				// New log arrived, parse the event and forward to the user
 				event := new(AimiddlewareWithdrawn)
 				if err := _Aimiddleware.contract.UnpackLog(event, "Withdrawn", log); err != nil {
 					return err

@@ -11,11 +11,11 @@ generate-aimiddleware-pkg:
 fetch-wallet:
 	go run ./scripts/fetchwallet
 
-dev-private-mode:
+prod-private-mode:
 	air -c .air.private-mode.toml
 
-dev-searcher-mode:
+prod-searcher-mode:
 	air -c .air.searcher-mode.toml
 
-dev-reset-default-data-dir:
+prod-reset-default-data-dir:
 	rm -rf /tmp/aiops_bundler

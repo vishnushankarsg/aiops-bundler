@@ -91,7 +91,7 @@ func GetValues() *Values {
 	// Default variables
 	viper.SetDefault("aiops_bundler_port", 4337)
 	viper.SetDefault("aiops_bundler_data_directory", "/tmp/aiops_bundler")
-	viper.SetDefault("aiops_bundler_supported_entry_points", "0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789")
+	viper.SetDefault("aiops_bundler_supported_ai_middleware", "0x") //TODO: add aiMiddleware Contract address
 	viper.SetDefault("aiops_bundler_max_verification_gas", 6000000)
 	viper.SetDefault("aiops_bundler_max_batch_gas_limit", 18000000)
 	viper.SetDefault("aiops_bundler_max_op_ttl_seconds", 180)
@@ -122,7 +122,7 @@ func GetValues() *Values {
 	_ = viper.BindEnv("aiops_bundler_private_key")
 	_ = viper.BindEnv("aiops_bundler_port")
 	_ = viper.BindEnv("aiops_bundler_data_directory")
-	_ = viper.BindEnv("aiops_bundler_supported_entry_points")
+	_ = viper.BindEnv("aiops_bundler_supported_ai_middleware")
 	_ = viper.BindEnv("aiops_bundler_beneficiary")
 	_ = viper.BindEnv("aiops_bundler_native_bundler_collector_tracer")
 	_ = viper.BindEnv("aiops_bundler_native_bundler_executor_tracer")
@@ -185,7 +185,7 @@ func GetValues() *Values {
 	ethClientUrl := viper.GetString("aiops_bundler_eth_client_url")
 	port := viper.GetInt("aiops_bundler_port")
 	dataDirectory := viper.GetString("aiops_bundler_data_directory")
-	supportedAiMiddlewares := envArrayToAddressSlice(viper.GetString("aiops_bundler_supported_entry_points"))
+	supportedAiMiddlewares := envArrayToAddressSlice(viper.GetString("aiops_bundler_supported_ai_middleware"))
 	beneficiary := viper.GetString("aiops_bundler_beneficiary")
 	nativeBundlerCollectorTracer := viper.GetString("aiops_bundler_native_bundler_collector_tracer")
 	nativeBundlerExecutorTracer := viper.GetString("aiops_bundler_native_bundler_executor_tracer")
